@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        @keyframes rotate {
+            100% {
+                transform: rotateY(-360deg);
+            }
+        }
+        @-moz-keyframes rotate {
+            100% {
+                transform: rotateY(-360deg);
+            }
+        }
+        @-webkit-keyframes rotate {
+            100% {
+                transform: rotateY(-360deg);
+            }
+        }
+        @-o-keyframes rotate {
+            100% {
+                transform: rotateY(-360deg);
+            }
+        }
+        body{
+            margin: 0 auto;
+            font-family: "微软雅黑";
+        }
+        .container{
+            position: relative;
+            height: 500px;
+            width: 500px;
+            top: -100px;
+            margin: 100px auto;
+            perspective: 900px;
+            -webkit-perspective: 400px;
+        }
+        .stage{
+            position: relative;
+            top: 30%;
+            height: 200px;
+            width: 200px;
+            margin: 0 auto;
+            transform-style:preserve-3d;
+        }
+        .stage:hover{
+            animation: rotate 20s linear 0s normal none infinite running;
+        }
+        .face{
+            position: absolute;
+            height: 200px;
+            width: 200px;
+            box-sizing: border-box;
+            border: 2px solid black;
+        }
+        .left{
+            background: #ffa42d3b;
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+        .right{
+            background: #92ff2d3b;
+            transform: rotateY(90deg) translateZ(100px);
+        }
+        .top{
+            background: #2dff733b;
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        .bottom{
+            background: #2d8fff3b;
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+        .front{
+            background: #7d2dff3b;
+            transform: translateZ(100px);
+        }
+        .back{
+            background: #ff2d7d3b;
+            transform: rotateX(180deg) translateZ(100px);
+        }
+        @keyframes enter{
+            0%{
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            60%{
+                transform: scale(1.1);
+                opacity: 1;
+            }
+        }
+    </style>
+
+    <script>
+        window.onload = function(){
+            document.getElementsByClassName('container')[0].style.animation = "enter 1s linear";
+        }
+    </script>    
+</head>
+<body>
+    <div class="container">
+        <div class="stage">
+            <div class="face left"></div>
+            <div class="face right"></div>
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+            <div class="face front"></div>
+            <div class="face back"></div>
+        </div>
+    </div>
+</body>
+</html>

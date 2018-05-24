@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        @keyframes enter{
+            0%{
+                transform: scale(0.5);
+                opacity: 0;
+            }
+        }
+        @keyframes enter2{
+            0%{ transform: translateX(-1000px); }
+        }
+        body{
+            margin: 0 auto;
+            padding: 0;
+            text-align: center;
+            font-family: "微软雅黑";
+        }
+        #container{
+            position: relative;
+            margin: 100px auto;
+            top: -50px;
+            height: 400px;
+            width: 600px;
+
+        }
+        span{
+            font-size: 30px;
+            font-weight: bold;
+
+        }
+        p{
+            z-index: 10;
+            display: inline;
+            margin: 0;
+            padding-left: 10px;
+            padding-right: 10px;
+            line-height: 50px;
+            font-size: 25px;
+            font-weight: bold;
+            background: #fff;
+            border-radius: 15px;
+            border: 1px solid #888;
+            box-shadow: 1px 1px 2px rgb(221, 139, 62);
+}
+        li{
+            list-style: none;
+            font-size: 20px;
+            text-align: left;
+        }
+        ul{
+            width:fit-content;
+            padding: 14px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 15px;
+            border: 1px dashed black;
+            max-width: 200px;
+            box-sizing: border-box;
+        }
+        .top{
+            position: relative;
+            width: 600px;
+            height: 150px;
+
+        }
+        .year{
+            position: relative;
+            width: 600px;
+            height: 50px;
+
+        }
+        #line{
+            z-index: 1;
+            position: absolute;
+            width: 600px;
+            height: 0;
+            top: 215px;
+            transform: translateY(-50%);
+            border: 1px solid black;
+        }
+        #arrow{
+            position: absolute;
+            top: 215px;
+            transform: translateY(-50%);
+            border: 6px solid transparent;
+            border-left: 20px solid #000;
+            width: 0;
+            height: 0px;
+            right: -15px;
+        }
+        .bottom{
+            position: relative;
+            width: 600px;
+            height: 150px;
+
+        }
+        .left{
+            position: absolute;
+            left: 100px;
+        }
+        .middle{
+            position: absolute;
+            left: 300px;
+        }
+        .right{
+            position: absolute;
+            left: 500px;
+        }
+        .left,.middle,.right{
+            transform: translate(-50%);
+        }
+        .top ul{            
+            bottom: 0px;
+        }
+        .bottom ul{            
+            top: 0px;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="container">
+        <span>我的时间轴</span>
+        <div class="top">
+            <ul class="middle">
+                <li>加入百度前端学院;</li>
+                <li>参加中干竞选;</li>
+                <li>继续潜行……</li>                
+            </ul>
+        </div>
+        <div class="year">
+            <p class="left">2017</p>
+            <p class="middle">2018</p>
+            <p class="right">2019</p>
+        </div>
+        <div class="bottom">
+            <ul class="left">
+                <li>初识C语言;</li>
+                <li>加入通院科协;</li>
+                <li>初识前端、Java、Python.</li>                
+            </ul>
+            <ul class="right">
+                <li>Loading……</li>
+            </ul>
+        </div>
+        <div id="line"></div>
+        <div id="arrow"></div>
+    </div>
+
+    <script>
+    window.onload = function(){
+        document.getElementsByTagName('span')[0].style.animation = "enter 1s ease-out";
+        document.getElementsByTagName('div')[4].style.animation = "enter2 1s ease-in";            
+        document.getElementsByTagName('div')[5].style.animation = "enter2 1s ease-in";            
+        for(var i=0;i<3;i++){
+            document.getElementsByTagName('p')[i].style.animation = "enter 2s ease-in";            
+        }
+        for(var i=0;i<3;i++){
+            document.getElementsByTagName('ul')[i].style.animation = "enter 2s ease-in";            
+        }
+    }
+    </script>
+
+</body></html>

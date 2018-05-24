@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Page-Enter" content="RevealTrans(Duration=4,Transition=3)"> 
+    <meta http-equiv="Page-Exit" content="RevealTrans(Duration=4,Transition=3)"> 
+    <title>Presentation by XHY</title>
+    <style>
+        body{
+            margin: 0 auto;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            background: url('background-2.jpg');
+            box-sizing: border-box;
+            transition: 1s;
+            font-family: "微软雅黑";
+        }
+        .container{
+            list-style: none;
+            margin: 0 auto;
+            padding: 50px;
+            height: 100%;
+            text-align: center;
+            box-sizing: border-box;
+            transition: 2s;
+
+        }
+        .left{
+            position: absolute;
+            left: 0;
+            width: 20%;
+
+        }
+        .right{
+            position: absolute;
+            right: 0;
+            width: 80%;
+            overflow: hidden;
+
+        }
+        iframe{
+            height: 100%;
+        }
+        li{
+            position: relative;
+            left: 50px;
+            line-height: 70px;
+            width: 100px;
+            margin: 20px;
+            background: #ffa42d;
+            border-radius: 60px;
+            font-size: 20px;
+            color: white;
+            transition: 0.5s;
+            opacity: 0.5;
+            cursor: pointer;
+
+        }
+        li:hover{
+            line-height: 100px;
+            width: 200px;
+            opacity: 1;
+            background: #293c66;
+            
+        }
+        #over{
+            z-index: 100;
+            position: fixed;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            line-height: 80px;
+            width: 80px;
+            border-radius: 40px;
+            border: 0;
+            text-align: center;
+            text-decoration: none;
+            font-size: 20px;
+            background: #293c6633;
+            color: white;
+            cursor:pointer;
+        }
+
+        @keyframes enter{
+            0%{
+                transform: scale(0.5);
+                opacity: 0;
+            }
+        }
+        @keyframes enter2{
+            0%{ transform: scale(0.1); }
+            75%{ transform:scale(1.1); }
+        }
+    </style>
+</head>
+<body onload="onload()">
+    <div id="over" onclick="over()">ovo</div>
+    
+    <ul class="container left">
+        <li onclick="box1()" onmouseover="fontOver(1)" onmouseout="fontOut(1)">个性标签</li>
+        <li onclick="box2()" onmouseover="fontOver(2)" onmouseout="fontOut(2)">工作经历</li>
+        <li onclick="box3()" onmouseover="fontOver(3)" onmouseout="fontOut(3)">比赛经历</li>
+        <li onclick="box4()" onmouseover="fontOver(4)" onmouseout="fontOut(4)">成果展示</li>
+        <li onclick="box5()" onmouseover="fontOver(5)" onmouseout="fontOut(5)">未来规划</li>
+
+    </ul>
+
+    <div>
+        <iframe class="container right" src=" " frameborder="0" scrolling="no"></iframe>
+    </div>
+
+    <script>
+        var iframe = document.getElementsByTagName('iframe')[0];
+        function onload() {
+            for(let i=0;i<5;i++){
+                var li = document.getElementsByTagName('li')[i];
+                li.style.animation = "enter2 1s ease-in-out";
+            }
+            document.getElementById('over').style.animation = "enter2 1s ease-in-out";
+        }
+        function box1() {
+            iframe.src = "main-1.html";
+
+        }
+        function box2() {
+            iframe.src = "main-2.html";
+
+        }
+        function box3() {
+            iframe.src = "main-3.html";
+
+        }
+        function box4() {
+            iframe.src = "main-4.html";
+
+        }
+        function box5() {
+            iframe.src = "main-5.html";
+
+        }
+        function fontOver(i) {
+            document.getElementsByTagName('li')[i-1].style.fontSize = "30px";            
+        }
+        function fontOut(i) {
+            document.getElementsByTagName('li')[i-1].style.fontSize = "20px";
+        }
+        function over(){
+            var con = document.getElementsByClassName('container')[0];
+            var frame = document.getElementsByTagName('iframe')[0];
+            con.style.transform = 'scale(0)';
+            con.style.opacity = '0';
+            frame.style.opacity = '0';
+            setTimeout("window.location.href = 'over.html'","1000") ;
+        }
+
+    </script>
+</body>
+</html>

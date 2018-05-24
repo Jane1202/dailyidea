@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Page-Enter" content="revealTrans(duration=4,transition=3)"> 
+    <meta http-equiv="Page-Exit" content="revealTrans(duration=4,transition=3)"> 
+    <title>Presentation by XHY</title>
+    <style>
+        @keyframes shadow{
+            from{ box-shadow: 0 0 2px 2px #ffa42d; }
+            to{ box-shadow: 0 0 10px 10px #ffa42d00; }
+            75%{ transform: scale(1.02) translateX(-100px); }
+        }
+        body{
+            margin: 0 auto;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            background: url('background-2.jpg');
+
+        }
+        #container{
+            position: relative;
+            margin: 150px auto;
+            height: 340px;
+            width: 600px;
+            text-align: center;
+            transition: 1s;
+
+        }
+        .contain{
+            display: block;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+            margin: 0 auto;
+            font-size: 20px;
+            font-weight: bolder;
+            font-family: "幼圆";
+            color: #003780;
+            text-shadow: 0 0 5px #ffa42d;
+        }
+        #image{
+            top: 20px;
+            height: 200px;
+            width: 200px;
+            background: url('21818230_p2.jpg');
+            background-size: 100%;
+            border-radius: 100px;
+            transition: 0.2s;
+            border: 1px solid white;
+            
+        }
+        #image:hover{
+            animation: shadow 1s ease-out infinite;
+            cursor: pointer;
+        }
+        #word1{
+            bottom: 70px;
+        }
+        #word2{
+            bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="image" class="contain" onclick="shift()"></div>
+        <div id="word1" class="contain">竞选人：徐海燕</div>
+        <div id="word2" class="contain">竞选职位：计算机部副部长</div>
+    </div> 
+    
+    <script>
+        function shift(){
+            var con = document.getElementById('container');
+            con.style.transform = 'scale(0) translateY(100%)';
+            con.style.opacity = '0';
+            setTimeout("window.location.href = 'main.html'","500") ;
+        }
+    </script>
+</body>
+</html>

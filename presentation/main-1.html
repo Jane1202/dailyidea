@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0 auto;
+            text-align: center;
+            font-family: "微软雅黑";
+        }
+        #container{
+            position: relative;
+            margin: 100px auto;
+            top: -50px;
+            height: 400px;
+            width: 600px;
+
+        }
+        span{
+            position: absolute;
+        }
+        #s0{
+            position: relative;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        #s1{
+            left: 20px;
+            top: 80px;
+            font-size: 47px;
+        }
+        #s2{
+            left: 130px;
+            top: 200px;
+            font-size: 45px;
+        }
+        #s3{
+            left: 300px;
+            top: 120px;
+            font-size: 40px;
+        }
+        #s4{
+            left: 0px;
+            top: 280px;
+            font-size: 47px;
+        }
+        #s5{
+            left: 278px;
+            top: 260px;
+            font-size: 36px;
+        }
+        #s6{
+            left: 60px;
+            top: 150px;
+            font-size: 40px;
+        }
+        #s7{
+            right: 170px;
+            top: 170px;
+            font-size: 65px;
+        }
+        #s8{
+            right: 342px;
+            top: 250px;
+            font-size: 65px;
+        }
+        #s9{
+            right: 110px;
+            top: 330px;
+            font-size: 32px;
+        }
+        #s10{
+            right: 45px;
+            top: 210px;
+            font-size: 44px;
+        }
+        #s11{
+            right: 30px;
+            top: 150px;
+            font-size: 37px;
+        }
+        #s12{
+            right: 80px;
+            top: 80px;
+            font-size: 57px;
+        }
+        #s13{
+            right: 67px;
+            top: 270px;
+            font-size: 43px;
+        }
+        @keyframes enter{
+            0%{
+                transform: scale(0.5);
+                opacity: 0;
+            }
+        }
+
+    </style>
+    
+
+</head>
+<body>
+    <div id="container">
+        <span id="s0">我的个性标签</span>
+        <span id="s1">刷剧</span>
+        <span id="s2">电影</span>
+        <span id="s3">PS</span>
+        <span id="s4">拖延症</span>
+        <span id="s5">手工</span>
+        <span id="s6">选择恐惧症</span>
+        <span id="s7">码农</span>
+        <span id="s8">宅</span>
+        <span id="s9">社交恐惧症</span>
+        <span id="s10">夜跑</span>
+        <span id="s11">强迫症</span>
+        <span id="s12">绘画</span>
+        <span id="s13">动漫</span>
+    </div>
+    <script>
+    window.onload = function(){
+        document.getElementsByTagName('span')[0].style.animation = "enter 1s ease-out";
+        for(var i=1;i<14;i++){
+            document.getElementsByTagName('span')[i].style.animation = "enter 2s ease-in";
+            var getRandomColor = function(){    
+                return  '#' +    
+                (function(color){    
+                return (color += '0123456789abcdef'[Math.floor(Math.random()*16)])    
+                    && (color.length == 6) ?  color : arguments.callee(color);    
+                })('');    
+            }
+            var color = getRandomColor;      
+            document.getElementsByTagName('span')[i].style.color = color;
+        }
+    }
+    </script>
+
+
+</body></html>

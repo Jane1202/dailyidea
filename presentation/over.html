@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Presentation by XHY</title>
+    <style>
+        body{
+            margin: 0 auto;
+            text-align: center;
+            background: url("background-2.jpg");
+            font-family: "微软雅黑";
+        }
+        #container{
+            position: relative;
+            margin: 100px auto;
+            height: 200px;
+            width: 600px;
+
+        }
+        p{
+            position: relative;
+            top: 50px;
+            font-size: 80px;
+            font-weight: bolder;
+            font-family: "幼圆";
+            color: #003780;
+            text-shadow: 0 0 10px #ffa42d;
+        }
+        @keyframes enter{
+            0%{
+                transform: scale(0);
+                opacity: 0;
+            }
+            75%{
+                transform: scale(2);
+                opacity: 1;
+            }
+        }
+
+    </style>
+    
+
+</head>
+<body>
+    <div id="container">
+        <p>谢 谢 观 看</p>
+        <p>(*╹▽╹*)</p>
+    </div>
+
+    <script>
+    window.onload = function(){
+        document.getElementsByTagName('p')[0].style.animation = "enter 3s ease-out";
+        document.getElementsByTagName('p')[1].style.animation = "enter 3s ease-out";
+    }
+    </script>
+
+</body></html>
