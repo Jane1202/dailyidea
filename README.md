@@ -1,1 +1,3 @@
-# gitskills
+# dailyidea
+这里就放我日常的脑洞和练习成果吧
+欢迎各位指教
