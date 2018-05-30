@@ -41,21 +41,21 @@
             padding-right: 10px;
             line-height: 50px;
             font-size: 25px;
-            font-weight: bold;
             background: #fff;
             border-radius: 15px;
             border: 1px solid #888;
             box-shadow: 1px 1px 2px rgb(221, 139, 62);
-}
+            font-weight: bold;
+        }
         li{
             list-style: none;
             font-size: 20px;
             text-align: left;
+            transition: 0.8s;
         }
         ul{
             width:fit-content;
             padding: 14px;
-            background: rgba(255, 255, 255, 0.5);
             border-radius: 15px;
             border: 1px dashed black;
             max-width: 200px;
@@ -127,9 +127,9 @@
         <span>我的时间轴</span>
         <div class="top">
             <ul class="middle">
-                <li>加入百度前端学院;</li>
-                <li>参加中干竞选;</li>
-                <li>继续潜行……</li>                
+                <li onmouseover="changeColor(0)" onmouseout="backColor(0)">加入百度前端学院;</li>
+                <li onmouseover="changeColor(1)" onmouseout="backColor(1)">参加中干竞选;</li>
+                <li onmouseover="changeColor(2)" onmouseout="backColor(2)">继续潜行……</li>                
             </ul>
         </div>
         <div class="year">
@@ -139,12 +139,12 @@
         </div>
         <div class="bottom">
             <ul class="left">
-                <li>初识C语言;</li>
-                <li>加入通院科协;</li>
-                <li>初识前端、Java、Python.</li>                
+                <li onmouseover="changeColor(3)" onmouseout="backColor(3)">初识C语言;</li>
+                <li onmouseover="changeColor(4)" onmouseout="backColor(4)">加入通院科协;</li>
+                <li onmouseover="changeColor(5)" onmouseout="backColor(5)">初识前端、Java、Python.</li>                
             </ul>
             <ul class="right">
-                <li>Loading……</li>
+                <li onmouseover="changeColor(6)" onmouseout="backColor(6)">Loading……</li>
             </ul>
         </div>
         <div id="line"></div>
@@ -163,6 +163,14 @@
             document.getElementsByTagName('ul')[i].style.animation = "enter 2s ease-in";            
         }
     }
+    var s = document.getElementsByTagName('li');
+    function changeColor(i){
+        s[i].style.color = "rgb(245, 125, 24)";
+    }  
+    function backColor(i){
+        s[i].style.color = "black";
+    }  
+
     </script>
 
 </body></html>

@@ -20,6 +20,8 @@
         }
         span{
             position: absolute;
+            display: inline-block;
+            transition: 0.8s 0.1s; 
         }
         #s0{
             position: relative;
@@ -105,36 +107,36 @@
 <body>
     <div id="container">
         <span id="s0">我的个性标签</span>
-        <span id="s1">刷剧</span>
-        <span id="s2">电影</span>
-        <span id="s3">PS</span>
-        <span id="s4">拖延症</span>
-        <span id="s5">手工</span>
-        <span id="s6">选择恐惧症</span>
-        <span id="s7">码农</span>
-        <span id="s8">宅</span>
-        <span id="s9">社交恐惧症</span>
-        <span id="s10">夜跑</span>
-        <span id="s11">强迫症</span>
-        <span id="s12">绘画</span>
-        <span id="s13">动漫</span>
+        <span id="s1" onmouseover="changeColor(1)" onmouseout="backColor(1)">刷剧</span>
+        <span id="s2" onmouseover="changeColor(2)" onmouseout="backColor(2)">电影</span>
+        <span id="s3" onmouseover="changeColor(3)" onmouseout="backColor(3)">PS</span>
+        <span id="s4" onmouseover="changeColor(4)" onmouseout="backColor(4)">拖延症</span>
+        <span id="s5" onmouseover="changeColor(5)" onmouseout="backColor(5)">手工</span>
+        <span id="s6" onmouseover="changeColor(6)" onmouseout="backColor(6)">选择恐惧症</span>
+        <span id="s7" onmouseover="changeColor(7)" onmouseout="backColor(7)">码农</span>
+        <span id="s8" onmouseover="changeColor(8)" onmouseout="backColor(8)">宅</span>
+        <span id="s9" onmouseover="changeColor(9)" onmouseout="backColor(9)">社交恐惧症</span>
+        <span id="s10" onmouseover="changeColor(10)" onmouseout="backColor(10)">夜跑</span>
+        <span id="s11" onmouseover="changeColor(11)" onmouseout="backColor(11)">强迫症</span>
+        <span id="s12" onmouseover="changeColor(12)" onmouseout="backColor(12)">绘画</span>
+        <span id="s13" onmouseover="changeColor(13)" onmouseout="backColor(13)">动漫</span>
     </div>
     <script>
+        var s = document.getElementsByTagName('span');
     window.onload = function(){
-        document.getElementsByTagName('span')[0].style.animation = "enter 1s ease-out";
-        for(var i=1;i<14;i++){
-            document.getElementsByTagName('span')[i].style.animation = "enter 2s ease-in";
-            var getRandomColor = function(){    
-                return  '#' +    
-                (function(color){    
-                return (color += '0123456789abcdef'[Math.floor(Math.random()*16)])    
-                    && (color.length == 6) ?  color : arguments.callee(color);    
-                })('');    
-            }
-            var color = getRandomColor;      
-            document.getElementsByTagName('span')[i].style.color = color;
+        s[0].style.animation = "enter 1s ease-out";
+        for(var i=1;i<s.length;i++){
+            s[i].style.animation = "enter 2s ease-in";
         }
     }
+    function changeColor(i){
+        s[i].style.color = "rgb(245,125,24)";
+        s[i].style.transform = "scale(1.1)";
+    }  
+    function backColor(i){
+        s[i].style.color = "black";
+        s[i].style.transform = "scale(1)";
+    }  
     </script>
 
 

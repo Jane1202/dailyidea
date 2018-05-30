@@ -35,6 +35,7 @@
             text-align: left;
             font-weight: bold;
             list-style: none;
+            transition: 0.5s 0.1s;
         }
         ul li ul{
             margin: 30px;
@@ -52,25 +53,25 @@
         }
         .first,.second,.none{
             font-size: 20px;
-            font-weight: normal;
             list-style: circle;
+            font-weight: normal;
         }
         .first:after,.second:after,.none:after{
-            font-weight: bolder;
-            font-family: "幼圆";
+            font-weight: bold;
+            font-style: italic;
             color: #333;
         }
         .first:after{
             content: "  一等奖";
-            text-shadow: 0 0 4px rgb(224, 87, 45);
+            text-shadow: 1px 0 white, 4px 1px 2px rgb(224, 87, 45);
         }
         .second:after{
             content: "  二等奖";
-            text-shadow: 0 0 4px rgb(43, 82, 189);
+            text-shadow: 1px 0 white, 4px 1px 2px rgb(43, 82, 189);
         }
         .none:after{
             content: "  未获奖";
-            text-shadow: 0 0 4px gray;
+            text-shadow: 1px 0 white, 4px 1px 2px gray;
         }  
     </style>
 
@@ -81,14 +82,14 @@
         <ul>
             <li>2017
                 <ul>
-                    <li class="first">校“新生杯”计算机基础知识竞赛</li>
-                    <li class="none">校算法脑洞大赛</li>
+                    <li class="first" onmouseover="changeColor(1)" onmouseout="backColor(1)">校“新生杯”计算机基础知识竞赛</li>
+                    <li class="none" onmouseover="changeColor(2)" onmouseout="backColor(2)">校算法脑洞大赛</li>
                 </ul>
             </li>
             <li>2018
                 <ul>
-                    <li class="none">“Wishare”杯程序设计大赛</li>
-                    <li class="second">校数学建模竞赛</li>
+                    <li class="none" onmouseover="changeColor(4)" onmouseout="backColor(4)">“Wishare”杯程序设计大赛</li>
+                    <li class="second" onmouseover="changeColor(5)" onmouseout="backColor(5)">校数学建模竞赛</li>
                 </ul>
             </li>
         </ul>               
@@ -102,6 +103,14 @@
             
         }
     }
+    var s = document.getElementsByTagName('li');
+    function changeColor(i){
+        s[i].style.color = "rgb(245, 125, 24)";
+    }  
+    function backColor(i){
+        s[i].style.color = "black";
+    }  
+    
     </script>
 
 </body></html>
