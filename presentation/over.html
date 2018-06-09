@@ -29,11 +29,11 @@
         }
         @keyframes enter{
             0%{
-                transform: scale(0);
+                transform: scale(0.5);
                 opacity: 0;
             }
             75%{
-                transform: scale(2);
+                transform: scale(1.5);
                 opacity: 1;
             }
         }
@@ -50,8 +50,8 @@
 
     <script>
     window.onload = function(){
-        document.getElementsByTagName('p')[0].style.animation = "enter 3s ease-out";
-        document.getElementsByTagName('p')[1].style.animation = "enter 3s ease-out";
+        document.getElementsByTagName('p')[0].style.animation = "enter 2s ease-in-out";
+        document.getElementsByTagName('p')[1].style.animation = "enter 2s ease-in-out";
     }
     </script>
 
